@@ -1,0 +1,31 @@
+<main class="lecteur">
+
+    <h1>Votre choix musical</h1>
+
+    
+
+    <div class="liste">
+        <div
+            class="musique"
+            v-for="musique in musiques"
+            >
+
+            <p class="titre">{{musique.titre}}</p>
+            <p class="artiste">{{musique.artiste}}</p>
+            <p class="temps">{{musique.temps}}</p>
+            
+        </div>
+    </div>
+
+    <!-- <div class="image">
+        <img :src="'images/' + musique.image[0]" alt="">
+    </div>
+
+    <div class="tags">
+        <div class="tag"
+             v-for="'tag in musique.tags">
+            <p>{{musique.tag}}</p>
+        </div>
+    </div> -->
+
+</main>
