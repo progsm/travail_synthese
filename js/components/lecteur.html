@@ -2,30 +2,58 @@
 
     <h1>Votre choix musical</h1>
 
-    
-
-    <div class="liste">
-        <div
-            class="musique"
-            v-for="musique in musiques"
-            >
-
-            <p class="titre">{{musique.titre}}</p>
-            <p class="artiste">{{musique.artiste}}</p>
-            <p class="temps">{{musique.temps}}</p>
+    <div class="container">
+        <div class="headerBox">
+            <input type="text" placeholder="Recherche">
+        </div>
+        <div class="liste"
+             @click="afficherTags">
+            <div
+                class="musiques"
+                v-for="musique in musiques"
+                >
+                <div class="titre">
+                    {{musique.titre}}
+                </div>
+                <div class="artiste">
+                    {{musique.artiste}}
+                </div>
+                <div class="temps">
+                    {{musique.temps}}
+                </div>  
+                <div v-for="tag in musique.tags">
+                    
+                </div>              
+            </div>
+        </div>
+        <div class="footerBox">
             
+            <div class="image">
+                <img :src="image" alt="">
+            </div>
+            <div class="boitePlay">
+                <div class="tempsDetoulant">
+                    <span class="runing_time">0:00</span>
+                    <input type="range" value="0">
+                    <span class="song_long">0:00</span>
+
+                </div>
+                <div class="boutonPlay">
+                    <div class="fleche"></div>
+                </div>
+            </div>
+            <div class="volume">
+                <input type="range" min="0" max="1" step="0.02">
+                <span>Volume</span>
+            </div>
+
+        </div>
+        <div class="tags">
+            <div class="tag">
+                <span>{{tag}}</span>
+            </div>
         </div>
     </div>
 
-    <!-- <div class="image">
-        <img :src="'images/' + musique.image[0]" alt="">
-    </div>
-
-    <div class="tags">
-        <div class="tag"
-             v-for="'tag in musique.tags">
-            <p>{{musique.tag}}</p>
-        </div>
-    </div> -->
-
+    
 </main>
