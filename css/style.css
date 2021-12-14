@@ -129,6 +129,10 @@ body .lecteur .container .liste {
   overflow-y: scroll;
 }
 
+body .lecteur .container .liste :hover {
+  background-color: #333;
+}
+
 body .lecteur .container .liste .musiques {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,6 +144,10 @@ body .lecteur .container .liste .musiques {
 body .lecteur .container .liste .musiques .titre, body .lecteur .container .liste .musiques .artiste, body .lecteur .container .liste .musiques .temps {
   padding-left: 80px;
   width: 150px;
+}
+
+body .lecteur .container .liste .musiques .titre.jouer, body .lecteur .container .liste .musiques .artiste.jouer, body .lecteur .container .liste .musiques .temps.jouer {
+  background-color: #02023d;
 }
 
 body .lecteur .container .footerBox {
@@ -192,29 +200,13 @@ body .lecteur .container .footerBox .boitePlay .tempsDetoulant input {
 }
 
 body .lecteur .container .footerBox .boitePlay .boutonPlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  background: #fff;
-}
-
-body .lecteur .container .footerBox .boitePlay .boutonPlay .fleche {
-  width: 0;
-  height: 0;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-bottom: 30px solid #3030f5;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+  padding: 10px;
+  background-color: #2075ad;
+  border: 1px solid #333;
+  border-radius: 18px;
+  color: white;
+  cursor: pointer;
+  margin-right: 3px;
 }
 
 body .lecteur .container .footerBox .volume {

@@ -4,16 +4,18 @@ export default externalTemplate({
 
     template_url: "js/components/lecteur.html",
 
-    props: ['musique'],
-            
-
+    
     // data
     data() {
         return {
+            audio: new Audio(),
             musiques: [],
-            identité: 0,
-            image:"",
-            tag:"",
+            class_active: false,
+            chanson: null,
+            image: "",
+            temps: "0",
+            avancement_temps: "0",
+            tag: "",
         }
     },
 
@@ -34,15 +36,30 @@ export default externalTemplate({
     // methodes
     methods: {
 
-        // methode pour filtrer les jeux dans le tableau
-        // filtrerMusique(une_chanson) {
-        //     
-        //     }
-        // },   
-    },
-    afficherTags(){
+        // methode pour filtrer les chansons dans le tableau
+        filtrerMusique(une_chanson) {
+            // if (une_chanson.temps < 100) {
+            //     return false
+            // }
+            return true
+        },
+
+        retourneChanson(image, temps, tags) {
+            this.image = image
+            this.temps = temps
+            this.tag = tags
+            
+        },
+
+        togglePlay(){
+
+        },
         
-        this.tag = "musique.tags"
     },
+
+    //     afficherTags(){
+
+    //     this.tag = "musique.tags"
+    // },
 
 })

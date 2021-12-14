@@ -6,11 +6,12 @@
         <div class="headerBox">
             <input type="text" placeholder="Recherche">
         </div>
-        <div class="liste"
-             @click="afficherTags">
+        <div class="liste">
             <div
                 class="musiques"
-                v-for="musique in musiques"
+                v-for="musique in musiques.filter(filtrerMusique)"
+                @click="retourneChanson(musique.image, musique.temps, musique.tags)"
+                
                 >
                 <div class="titre">
                     {{musique.titre}}
@@ -19,41 +20,43 @@
                     {{musique.artiste}}
                 </div>
                 <div class="temps">
-                    {{musique.temps}}
+                    {{musique.temps}} 
                 </div>  
-                <div v-for="tag in musique.tags">
-                    
-                </div>              
             </div>
         </div>
         <div class="footerBox">
             
             <div class="image">
-                <img :src="image" alt="">
-            </div>
-            <div class="boitePlay">
-                <div class="tempsDetoulant">
-                    <span class="runing_time">0:00</span>
+                <img :src="'images/' + image">
+                    </div>
+                    <div class="boitePlay">
+                        <div class="tempsDetoulant">
+                    <span class="runing_time">{{avancement_temps}}</span>
                     <input type="range" value="0">
-                    <span class="song_long">0:00</span>
-
+                    <span class="song_long">{{temps}}</span>
+                    
                 </div>
                 <div class="boutonPlay">
-                    <div class="fleche"></div>
+                    PLAY
+                    <!-- <div class="fleche"></div> -->
                 </div>
             </div>
             <div class="volume">
                 <input type="range" min="0" max="1" step="0.02">
                 <span>Volume</span>
             </div>
-
+            
         </div>
         <div class="tags">
             <div class="tag">
-                <span>{{tag}}</span>
+                <span>{{tag.tags}}</span>
             </div>
         </div>
     </div>
-
+    
     
 </main>
+
+<!-- <div v-for="tag in musique.tags"> -->
+    
+    <!-- :class="{jouer:class_active}" -->             
