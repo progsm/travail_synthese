@@ -26,35 +26,37 @@
         </div>
         <div class="footerBox">
             
-            <div class="image">
-                <img :src="'images/' + image">
+            <div class="barreSon">
+                <div class="image">
+                    <img :src="'images/' + image">
+                        </div>
+                        <div class="boitePlay">
+                            <div class="tempsDetoulant">
+                        <span class="runing_time">{{avancement_temps}}</span>
+                        <input type="range" value="0">
+                        <span class="song_long">{{temps}}</span>
+                
                     </div>
-                    <div class="boitePlay">
-                        <div class="tempsDetoulant">
-                    <span class="runing_time">{{avancement_temps}}</span>
-                    <input type="range" value="0">
-                    <span class="song_long">{{temps}}</span>
-                    
+                    <div class="boutonPlay">
+                        <div class="playPause"
+                                 @click="togglePlay">
+                            {{ jouer ? 'pause' : 'play'}}
+                        </div>
+                    </div>
                 </div>
-                <div class="boutonPlay">
-                    <div class="playPause"
-                             @click="togglePlay">
-                        {{ jouer ? 'pause' : 'play'}}
-                    </div>   
+                <div class="volume">
+                    <input type="range" min="0" max="1" step="0.02">
+                    <span>Volume</span>
                 </div>
-            </div>
-            <div class="volume">
-                <input type="range" min="0" max="1" step="0.02">
-                <span>Volume</span>
             </div>
             
-        </div>
-        <div class="tagsBox">
-            <div class="boucleTag"
-            v-for="tag in tags"
-            :id="tag"
-            >
-               <div class="tag">{{tag}}</div> 
+            <div class="tagsBox">
+                <div class="boucleTag"
+                v-for="tag in tags"
+                :id="tag"
+                >
+                   <div class="tag">{{tag}}</div> 
+                </div>
             </div>
         </div>
     </div>

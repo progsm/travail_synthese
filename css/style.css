@@ -159,21 +159,33 @@ body .lecteur .container .footerBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 2px solid #f5f5f5;
+}
+
+body .lecteur .container .footerBox .barreSon {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border-top: 2px solid #f5f5f5;
 }
 
-body .lecteur .container .footerBox .image {
+body .lecteur .container .footerBox .barreSon .image {
   margin-top: 50px;
 }
 
-body .lecteur .container .footerBox .image img {
+body .lecteur .container .footerBox .barreSon .image img {
   width: 100px;
   height: 100px;
 }
 
-body .lecteur .container .footerBox .boitePlay {
+body .lecteur .container .footerBox .barreSon .boitePlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +201,7 @@ body .lecteur .container .footerBox .boitePlay {
           align-items: center;
 }
 
-body .lecteur .container .footerBox .boitePlay .tempsDetoulant {
+body .lecteur .container .footerBox .barreSon .boitePlay .tempsDetoulant {
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,11 +211,11 @@ body .lecteur .container .footerBox .boitePlay .tempsDetoulant {
           align-items: center;
 }
 
-body .lecteur .container .footerBox .boitePlay .tempsDetoulant input {
+body .lecteur .container .footerBox .barreSon .boitePlay .tempsDetoulant input {
   width: 250px;
 }
 
-body .lecteur .container .footerBox .boitePlay .boutonPlay {
+body .lecteur .container .footerBox .barreSon .boitePlay .boutonPlay {
   padding: 10px;
   background-color: #2075ad;
   border: 1px solid #333;
@@ -213,7 +225,7 @@ body .lecteur .container .footerBox .boitePlay .boutonPlay {
   margin-right: 3px;
 }
 
-body .lecteur .container .footerBox .volume {
+body .lecteur .container .footerBox .barreSon .volume {
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
