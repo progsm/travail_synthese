@@ -15,7 +15,8 @@ export default externalTemplate({
             image: "",
             temps: "0",
             avancement_temps: "0",
-            tag: "",
+            tags: [],
+            tag:"",
             jouer: true,
         }
     },
@@ -45,11 +46,12 @@ export default externalTemplate({
             return true
         },
 
-        retourneChanson(image, temps, tags) {
-            this.image = image
-            this.temps = temps
+        retourneChanson(choix) {
+            this.image = choix.image
+            this.temps = choix.temps
             // this.temps = this.changerSeconde(temps)
-            this.tag = tags
+            this.tags = choix.tags
+            console.log(this.tags)
 
         },
 

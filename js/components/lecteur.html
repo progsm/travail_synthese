@@ -10,7 +10,7 @@
             <div
                 class="musiques"
                 v-for="musique in musiques.filter(filtrerMusique)"
-                @click="retourneChanson(musique.image, musique.temps, musique.tags)"
+                @click="retourneChanson(musique)"
                 
                 >
                 <div class="titre">
@@ -49,9 +49,12 @@
             </div>
             
         </div>
-        <div class="tags">
-            <div class="tag">
-                <span>{{tag.tags}}</span>
+        <div class="tagsBox">
+            <div class="boucleTag"
+            v-for="tag in tags"
+            :id="tag"
+            >
+               <div class="tag">{{tag}}</div> 
             </div>
         </div>
     </div>

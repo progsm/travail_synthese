@@ -105,6 +105,9 @@ body{
                 :hover{
                     background-color: #333;
                 }
+                .surbrillance{
+                    background-color: #555;
+                }
                 .musiques{
                     display: flex;
                     // justify-content: center;
@@ -184,11 +187,20 @@ body{
                     justify-content: center;
                     
                 }
-                .tags{
+            }
+            .tagsBox{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin-top: 0px;
+                height: 35px;
+                background-color: #333;
+
+                .boucleTag{
                     .tag{
-                        span{
-                            color: #fff;
-                        }
+                        
+                    color: #fff;
+                        
                     }
                 }
             }

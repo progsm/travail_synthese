@@ -133,6 +133,10 @@ body .lecteur .container .liste :hover {
   background-color: #333;
 }
 
+body .lecteur .container .liste .surbrillance {
+  background-color: #555;
+}
+
 body .lecteur .container .liste .musiques {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,7 +227,20 @@ body .lecteur .container .footerBox .volume {
           justify-content: center;
 }
 
-body .lecteur .container .footerBox .tags .tag span {
+body .lecteur .container .tagsBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 0px;
+  height: 35px;
+  background-color: #333;
+}
+
+body .lecteur .container .tagsBox .boucleTag .tag {
   color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
