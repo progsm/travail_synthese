@@ -37,8 +37,10 @@
                     
                 </div>
                 <div class="boutonPlay">
-                    PLAY
-                    <!-- <div class="fleche"></div> -->
+                    <div class="playPause"
+                             @click="togglePlay">
+                        {{ jouer ? 'pause' : 'play'}}
+                    </div>   
                 </div>
             </div>
             <div class="volume">

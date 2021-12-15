@@ -4,7 +4,7 @@ export default externalTemplate({
 
     template_url: "js/components/lecteur.html",
 
-    
+
     // data
     data() {
         return {
@@ -16,6 +16,7 @@ export default externalTemplate({
             temps: "0",
             avancement_temps: "0",
             tag: "",
+            jouer: true,
         }
     },
 
@@ -47,14 +48,22 @@ export default externalTemplate({
         retourneChanson(image, temps, tags) {
             this.image = image
             this.temps = temps
+            // this.temps = this.changerSeconde(temps)
             this.tag = tags
+
+        },
+
+        // changerSeconde(nombre) {
+        //     let minutes = Math.floor(nombre / 60000);
+        //     let seconds = ((nombre % 60000) / 1000).toFixed(0);
+        //     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        // },
+
+        togglePlay () {
             
+            this.jouer = !this.jouer;
         },
 
-        togglePlay(){
-
-        },
-        
     },
 
     //     afficherTags(){
