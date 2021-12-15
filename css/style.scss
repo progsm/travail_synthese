@@ -114,13 +114,13 @@ body{
                     // align-items: center;
                     color: #fff;
                     border-bottom: 2px solid #f5f5f5;
-                    
+                    &.jouer{
+                        background-color: rgb(2, 2, 61);
+                    }
                     .titre, .artiste, .temps{
                         padding-left: 80px;
                         width: 150px;
-                        &.jouer{
-                            background-color: rgb(2, 2, 61);
-                        }
+                        
                     }
                 }  
             }

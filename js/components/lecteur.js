@@ -11,13 +11,16 @@ export default externalTemplate({
             audio: new Audio(),
             musiques: [],
             class_active: false,
-            chanson: null,
-            image: "",
+            chanson: "",
+            image: "../images/fond_image.jpg",
             temps: "0",
             avancement_temps: "0",
             tags: [],
             tag: "",
-            jouer: true,
+            play: true,
+            selectionne: {
+                backgroundColor: "",
+            }
         }
     },
 
@@ -50,8 +53,8 @@ export default externalTemplate({
             this.image = choix.image
             this.temps = choix.temps
             this.tags = choix.tags
-
-
+            this.chanson = choix
+           
         },
 
         changerSeconde(nombre) {
@@ -62,14 +65,15 @@ export default externalTemplate({
 
         togglePlay() {
 
-            this.jouer = !this.jouer;
+            this.play = !this.play;
         },
 
+        // changerCouleur(choix) {
+        //     if (this.retourneChanson(this.musiques) = choix) {
+        //         this.selectionne = "bleu"
+        //     }
+        // },
+
     },
-
-    //     afficherTags(){
-
-    //     this.tag = "musique.tags"
-    // },
 
 })
