@@ -20,7 +20,7 @@
                     {{musique.artiste}}
                 </div>
                 <div class="temps">
-                    {{musique.temps}} 
+                    {{changerSeconde(musique.temps)}} 
                 </div>  
             </div>
         </div>
@@ -34,7 +34,7 @@
                             <div class="tempsDetoulant">
                         <span class="runing_time">{{avancement_temps}}</span>
                         <input type="range" value="0">
-                        <span class="song_long">{{temps}}</span>
+                        <span class="song_long">{{changerSeconde(temps)}}</span>
                 
                     </div>
                     <div class="boutonPlay">

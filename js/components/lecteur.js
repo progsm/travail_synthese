@@ -16,7 +16,7 @@ export default externalTemplate({
             temps: "0",
             avancement_temps: "0",
             tags: [],
-            tag:"",
+            tag: "",
             jouer: true,
         }
     },
@@ -49,20 +49,19 @@ export default externalTemplate({
         retourneChanson(choix) {
             this.image = choix.image
             this.temps = choix.temps
-            // this.temps = this.changerSeconde(temps)
             this.tags = choix.tags
-            console.log(this.tags)
+
 
         },
 
-        // changerSeconde(nombre) {
-        //     let minutes = Math.floor(nombre / 60000);
-        //     let seconds = ((nombre % 60000) / 1000).toFixed(0);
-        //     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-        // },
+        changerSeconde(nombre) {
+            let minutes = Math.floor(nombre / 60);
+            let seconds = ((nombre % 60));
+            return minutes + ":" + (seconds);
+        },
 
-        togglePlay () {
-            
+        togglePlay() {
+
             this.jouer = !this.jouer;
         },
 
