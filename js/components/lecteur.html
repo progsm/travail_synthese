@@ -11,7 +11,8 @@
                 class="musiques"
                 v-for="musique in musiques.filter(filtrerMusique)"
                 @click="retourneChanson(musique)"
-                :class="{jouer: musique == audio}"
+                :class="{jouer: musique == chanson}"
+            
                 
                 >
                 <div class="titre">
@@ -40,8 +41,9 @@
                     </div>
                     <div class="boutonPlay">
                         <div class="playPause"
-                                 @click="togglePlay">
+                             @click="togglePlay">
                             {{ play ? 'pause' : 'play'}}
+                            
                         </div>
                     </div>
                 </div>
