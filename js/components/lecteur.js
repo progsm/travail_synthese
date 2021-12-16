@@ -10,7 +10,6 @@ export default externalTemplate({
         return {
             audio: new Audio(),
             musiques: [],
-
             chanson: "",
             image: "../images/fond_image.jpg",
             temps: "0",
@@ -79,10 +78,10 @@ export default externalTemplate({
                 // mon temps actuel = currentTime =>represente a combien je suis rendu 
                 this.avancement_temps = this.audio.currentTime
             })
-
+            
             // <audio src="food-vlog-11204.mp3">
-            this.audio.setAttribute("src", "chanson.audio")
-            // this.audio.play()
+            this.audio.setAttribute("src", this.chanson.audio)
+            // this.audio.play() 
             this.audio.volume = 0.1
             // this.audio.pause()
             console.log(this.audio)
