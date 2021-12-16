@@ -11,7 +11,7 @@
                 class="musiques"
                 v-for="musique in musiques.filter(filtrerMusique)"
                 @click="retourneChanson(musique)"
-                :class="{jouer: musique == chanson}"
+                :class="{jouer: musique == audio}"
                 
                 >
                 <div class="titre">
@@ -68,4 +68,4 @@
 
 <!-- <div v-for="tag in musique.tags"> -->
     
-    <!-- :class="{jouer:class_active}" -->             
+               

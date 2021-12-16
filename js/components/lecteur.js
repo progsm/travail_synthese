@@ -10,8 +10,8 @@ export default externalTemplate({
         return {
             audio: new Audio(),
             musiques: [],
-            class_active: false,
-            chanson: "",
+           
+            // chanson: "",
             image: "../images/fond_image.jpg",
             temps: "0",
             avancement_temps: "0",
@@ -22,6 +22,8 @@ export default externalTemplate({
                 backgroundColor: "",
             },
             recherche: "",
+            // chanson_active: false
+
         }
     },
 
@@ -34,19 +36,16 @@ export default externalTemplate({
             })
         })
 
-
-
+        
     },
-
-
+    
+    
     // methodes
     methods: {
 
         // methode pour filtrer les chansons dans le tableau
         filtrerMusique(une_chanson) {
-            // if (this.recherche = une_chanson.artiste) {
-
-            // }
+            
             return true
         },
 
@@ -54,8 +53,34 @@ export default externalTemplate({
             this.image = choix.image
             this.temps = choix.temps
             this.tags = choix.tags
-            this.chanson = choix
+            this.audio = choix
+            
+            if(this.audio == true){
 
+                this.audio.addEventListener("play", e => {
+                    this.play = true
+                 })
+                 
+                 
+                 // qund le temps avance
+                 this.audio.addEventListener("timeupdate", e => {
+                    // mon temps actuel = currentTime =>represente a combien je suis rendu 
+                    this.avancement_temps = this.audio.currentTime
+                 })
+                 
+                 // <audio src="food-vlog-11204.mp3">
+                 this.audio.setAttribute("src", "this.audio.audio")
+                 this.audio.play()
+                 this.audio.volume = 0.1
+                 // this.audio.pause()
+                }else{
+                    this.audio.addEventListener("pause", e => {
+                        this.play = true
+                    })
+                }
+                
+                console.log(this.audio)
+            // play, pause, ended, timeupdate
         },
 
         changerSeconde(nombre) {
@@ -63,15 +88,15 @@ export default externalTemplate({
             let seconds = ((nombre % 60));
             return minutes + ":" + (seconds);
         },
-
+        
         togglePlay() {
-
+            
             this.play = !this.play;
+            
         },
 
         rechercheTag(tagSelectionne) {
             this.recherche = tagSelectionne
-            console.log(this.recherche)
         }
 
     },
