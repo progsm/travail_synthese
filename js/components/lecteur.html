@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="headerBox">
-            <input type="text" placeholder="Recherche">
+            <input type="text" placeholder="Recherche" v-model="recherche">
         </div>
         <div class="liste">
             <div
@@ -56,7 +56,8 @@
                 v-for="tag in tags"
                 :id="tag"
                 >
-                   <div class="tag">{{tag}}</div> 
+                   <div class="tag"
+                         @click="rechercheTag(tag)">{{tag}}</div> 
                 </div>
             </div>
         </div>

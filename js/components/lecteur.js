@@ -20,7 +20,8 @@ export default externalTemplate({
             play: true,
             selectionne: {
                 backgroundColor: "",
-            }
+            },
+            recherche: "",
         }
     },
 
@@ -43,8 +44,8 @@ export default externalTemplate({
 
         // methode pour filtrer les chansons dans le tableau
         filtrerMusique(une_chanson) {
-            // if (une_chanson.temps < 100) {
-            //     return false
+            // if (this.recherche = une_chanson.artiste) {
+
             // }
             return true
         },
@@ -54,7 +55,7 @@ export default externalTemplate({
             this.temps = choix.temps
             this.tags = choix.tags
             this.chanson = choix
-           
+
         },
 
         changerSeconde(nombre) {
@@ -68,11 +69,10 @@ export default externalTemplate({
             this.play = !this.play;
         },
 
-        // changerCouleur(choix) {
-        //     if (this.retourneChanson(this.musiques) = choix) {
-        //         this.selectionne = "bleu"
-        //     }
-        // },
+        rechercheTag(tagSelectionne) {
+            this.recherche = tagSelectionne
+            console.log(this.recherche)
+        }
 
     },
 
