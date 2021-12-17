@@ -30,11 +30,11 @@
             
             <div class="barreSon">
                 <div class="image">
-                    <img :src="'images/' + image">
+                    <img :src="'images/' + chanson.image">
                         </div>
                         <div class="boitePlay">
                             <div class="tempsDetoulant">
-                        <span class="runing_time">{{avancement_temps}}</span>
+                        <span class="runing_time">{{changerSeconde(avancement_temps)}}</span>
                         <input type="range" value="0">
                         <span class="song_long">{{changerSeconde(temps)}}</span>
                 
