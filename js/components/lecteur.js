@@ -53,6 +53,26 @@ export default externalTemplate({
             this.tags = choix.tags
             this.chanson = choix
 
+            this.audio.addEventListener("play", e => {
+                this.play = true
+            })
+
+            this.audio.addEventListener("pause", e => {
+                this.play = false
+            })
+            // qund le temps avance
+            this.audio.addEventListener("timeupdate", e => {
+                // mon temps actuel = currentTime =>represente a combien je suis rendu 
+                this.avancement_temps = this.audio.currentTime
+            })
+            
+            // <audio src="food-vlog-11204.mp3">
+            this.audio.setAttribute("src", 'audio/' + this.chanson.audio)
+            this.audio.play() 
+            this.audio.volume = 0.1
+            // this.audio.pause()
+            // console.log(this.audio)
+
 
         },
 
@@ -64,34 +84,22 @@ export default externalTemplate({
 
         togglePlay() {
 
-            // this.play = !this.play;
             // play, pause, ended, timeupdate
-            this.audio.addEventListener("play", e => {
-                this.play = false
-            })
-
-            this.audio.addEventListener("pause", e => {
-                this.play = true
-            })
-            // qund le temps avance
-            this.audio.addEventListener("timeupdate", e => {
-                // mon temps actuel = currentTime =>represente a combien je suis rendu 
-                this.avancement_temps = this.audio.currentTime
-            })
             
-            // <audio src="food-vlog-11204.mp3">
-            this.audio.setAttribute("src", this.chanson.audio)
-            // this.audio.play() 
-            this.audio.volume = 0.1
-            // this.audio.pause()
-            console.log(this.audio)
 
-            if (this.play) {
-                this.audio.pause();
-            } else {
-                this.audio.play();
+            // if (this.play) {
+            //     this.audio.pause();
+            // } else {
+            //     this.audio.play();
+            // }
+
+            if(this.play = true){
+                this.audio.pause()
             }
-            this.play = !this.play;
+            
+            if(this.play = false){
+                this.audio.pause()
+            }
 
         },
 
