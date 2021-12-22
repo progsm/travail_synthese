@@ -66,18 +66,17 @@ export default externalTemplate({
             // si une_chanson.tags contiens this.recherche == false
             //   return false
 
-            // if (this.recherche != "") {
-            //     if (une_chanson.titre != this.recherche) {
-            //         return false
-            //     }
-            //     if (une_chanson.artiste != this.recherche) {
-            //         return false
-            //     }
-            //     if (une_chanson.tags != includes(this.recherche)) {
-            //         return false
-            //     }
-
-            // }
+            if (this.recherche != "") {
+                
+                if (une_chanson.titre.toLowerCase() != this.recherche && une_chanson.artiste.toLowerCase() != this.recherche) {
+                    return false
+                }
+               
+                // if (une_chanson.tags.includes(this.recherche)) {
+                //     return false
+                // }
+                
+            }
 
             return true
 
@@ -104,7 +103,7 @@ export default externalTemplate({
             let minutes = Math.floor(nombre / 60);
             let seconds = ((nombre % 60));
 
-        
+
             // si seconds est plus petit que 10
             //     ajouter un zéro au début
 
