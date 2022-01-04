@@ -23,6 +23,7 @@ export default externalTemplate({
                 backgroundColor: "",
             },
             recherche: "",
+            volume: 0.5,
 
 
         }
@@ -58,24 +59,18 @@ export default externalTemplate({
 
         // methode pour filtrer les chansons dans le tableau
         filtrerMusique(une_chanson) {
-            // si this.recherche != ""
-
-            // si une_chanson.titre != this.recherche
-            //   return false
-
-            // si une_chanson.tags contiens this.recherche == false
-            //   return false
 
             if (this.recherche != "") {
-                
-                if (une_chanson.titre.toLowerCase() != this.recherche && une_chanson.artiste.toLowerCase() != this.recherche) {
+
+                if (
+                    une_chanson.titre.toLowerCase() != this.recherche.toLowerCase() &&
+                    une_chanson.artiste.toLowerCase() != this.recherche.toLowerCase() &&
+                    une_chanson.tags.includes(this.recherche) == false) {
                     return false
                 }
-               
                 // if (une_chanson.tags.includes(this.recherche)) {
                 //     return false
                 // }
-                
             }
 
             return true
@@ -100,14 +95,14 @@ export default externalTemplate({
         },
 
         changerSeconde(nombre) {
-            let minutes = Math.floor(nombre / 60);
-            let seconds = ((nombre % 60));
+            let minutes = Math.floor(nombre / 60)
+            let secondes = ((nombre % 60))
 
+            if (secondes < 10) {
+                return minutes + ":" + ('0' + secondes);
+            } else
 
-            // si seconds est plus petit que 10
-            //     ajouter un zéro au début
-
-            return minutes + ":" + (seconds);
+                return minutes + ":" + (secondes);
         },
 
         togglePlay() {
@@ -126,7 +121,12 @@ export default externalTemplate({
 
         rechercheTag(tagSelect) {
             this.recherche = tagSelect
-        }
+        },
+
+        updateVolume() {
+            this.audio.volume = this.volume
+        },
+
 
     },
 
