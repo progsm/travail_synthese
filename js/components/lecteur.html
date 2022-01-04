@@ -33,7 +33,7 @@
                         <div class="boitePlay">
                             <div class="tempsDetoulant">
                         <span class="runing_time">{{changerSeconde(avancement_temps)}}</span>
-                        <input type="range" value="0">
+                        <input type="range" min="0" :max="chanson.temps" v-model="avancement_temps">
                         <span class="song_long">{{changerSeconde(temps)}}</span>
                 
                     </div>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="volume">
-                    <input type="range" min="0" max="1" step="0.02">
+                    <input @input="updateVolume()" type="range" min="0" max="1" step="0.02" v-model="volume">
                     <span>Volume</span>
                 </div>
             </div>
