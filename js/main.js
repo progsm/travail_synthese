@@ -17,9 +17,6 @@ const app = {
         }
     },
 
-
-
-
     // methodes
     methods: {
 

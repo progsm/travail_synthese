@@ -31,6 +31,7 @@ export default externalTemplate({
 
     // dès l'ouverture du navigateur
     mounted() {
+        
         // va chercher l'info dans le tableau json
         fetch("chansons.json").then(resp => {
             resp.json().then(contenu_json => {
@@ -45,9 +46,9 @@ export default externalTemplate({
         this.audio.addEventListener("pause", e => {
             this.play = false
         })
-        // qund le temps avance
+        // quand le temps avance
         this.audio.addEventListener("timeupdate", e => {
-            // mon temps actuel = currentTime =>represente a combien je suis rendu 
+            // mon temps actuel = currentTime => represente a combien je suis rendu 
             this.avancement_temps = Math.round(this.audio.currentTime)
         })
 
@@ -68,33 +69,26 @@ export default externalTemplate({
                     une_chanson.tags.includes(this.recherche) == false) {
                     return false
                 }
-                // if (une_chanson.tags.includes(this.recherche)) {
-                //     return false
-                // }
             }
 
             return true
 
         },
 
+        // methode retourne les éléments de la chanson sélectionnée
         retourneChanson(choix) {
-            // this.image = choix.image
+
             this.temps = choix.temps
             this.tags = choix.tags
             this.chanson = choix
-
-
-
-            // <audio src="food-vlog-11204.mp3">
             this.audio.setAttribute("src", 'audio/' + this.chanson.audio)
             this.audio.play()
-            this.audio.volume = 0.1
-
-
 
         },
 
+        // methode converti les secondes en minutes (0:00)
         changerSeconde(nombre) {
+
             let minutes = Math.floor(nombre / 60)
             let secondes = ((nombre % 60))
 
@@ -105,9 +99,8 @@ export default externalTemplate({
                 return minutes + ":" + (secondes);
         },
 
+        // methode bascule de play a pause & vice versa
         togglePlay() {
-
-
 
             if (this.play == true) {
                 this.audio.pause()
@@ -119,11 +112,13 @@ export default externalTemplate({
 
         },
 
-        rechercheTag(tagSelect) {
-            this.recherche = tagSelect
+        //methode quand click sur tag -> tag apparait dans la barre recherche
+        rechercheTag(tagSelectionne) {
+            this.recherche = tagSelectionne
         },
 
-        updateVolume() {
+        // methode permet de controler le volume
+        controleVolume() {
             this.audio.volume = this.volume
         },
 

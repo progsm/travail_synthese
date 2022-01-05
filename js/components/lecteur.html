@@ -3,9 +3,13 @@
     <h1>Votre choix musical</h1>
 
     <div class="container">
+
+        <!-- header du container avec barre de recherche -->
         <div class="headerBox">
             <input type="text" placeholder="Recherche" v-model="recherche">
         </div>
+
+        <!-- tableau avec la liste des musique -->
         <div class="liste">
             <div
                 class="musiques"
@@ -24,48 +28,65 @@
                 </div>  
             </div>
         </div>
+
+        <!-- footer du container contient l'information de la chanson sélectionnée -->
         <div class="footerBox">
             
-            <div class="barreSon">
+            <!-- image, barre de déroulement/bouton play-pause, volume -->
+            <div class="controleChanson">
+
+                <!-- image -->
                 <div class="image">
                     <img :src="'images/' + chanson.image">
-                        </div>
-                        <div class="boitePlay">
-                            <div class="tempsDetoulant">
+                </div>
+
+                <!-- barre de déroulement et bouton play-pause-->
+                <div class="boitePlay">
+
+                    <!-- barre de droulement -->
+                    <div class="tempsDetoulant">
                         <span class="runing_time">{{changerSeconde(avancement_temps)}}</span>
                         <input type="range" min="0" :max="chanson.temps" v-model="avancement_temps">
                         <span class="song_long">{{changerSeconde(temps)}}</span>
-                
                     </div>
+
+                    <!-- bouton play-pause -->
                     <div class="boutonPlay">
                         <div class="playPause"
                              @click="togglePlay">
-                            {{ play ? 'pause' : 'play'}}
-                            
+                             {{ play ? 'pause' : 'play'}}   
                         </div>
                     </div>
+
                 </div>
+
+                <!-- volume -->
                 <div class="volume">
-                    <input @input="updateVolume()" type="range" min="0" max="1" step="0.02" v-model="volume">
+                    <input @input="controleVolume()" type="range" min="0" max="1" step="0.02" v-model="volume">
                     <span>Volume</span>
                 </div>
             </div>
-            
+
+            <!-- section tags -->
             <div class="tagsBox">
+
                 <div class="boucleTag"
-                v-for="tag in tags"
-                :id="tag"
-                >
-                   <div class="tag"
-                         @click="rechercheTag(tag)">{{tag}}</div> 
+                     v-for="tag in tags"
+                     :id="tag">
+
+                    <div class="tag"
+                         @click="rechercheTag(tag)">
+                         {{tag}}
+                    </div> 
+
                 </div>
             </div>
+
         </div>
+
     </div>
-    
     
 </main>
 
-<!-- <div v-for="tag in musique.tags"> -->
     
                
