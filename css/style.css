@@ -77,6 +77,31 @@ body .lecteur h1 {
   color: #224bfd;
   font-size: 40px;
   margin: 0px;
+  margin-bottom: -10px;
+}
+
+body .lecteur .boutonRetour {
+  background-color: #224bfd;
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+body .lecteur .boutonRetour a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
 }
 
 body .lecteur .container {

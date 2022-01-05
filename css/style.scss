@@ -51,6 +51,25 @@ body{
             color: rgb(34, 75, 253);
             font-size: 40px;  
             margin: 0px; 
+            margin-bottom: -10px;
+        }
+
+        .boutonRetour{
+            background-color: rgb(34, 75, 253);
+            width: 100px;
+            height: 30px;
+            border-radius: 7px;
+            display: flex;
+	        justify-content: center;
+	        align-items: center;
+            margin-top: 0px;
+            margin-bottom: 10px;
+
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 16px;
+            }
         }
 
         .container{
