@@ -4,36 +4,18 @@ body {
 }
 
 body .accueil {
-  min-height: 100%;
-  min-width: 1200px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0px auto;
-  background-color: #888787;
   background-image: url("../images/bg_image.jpg");
   background-size: cover;
   background-position: center;
-}
-
-body .accueil h1 {
-  color: #fff;
+  min-height: 100vh;
+  min-width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 250px;
-  font-size: 50px;
-}
-
-body .accueil .boutons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -42,7 +24,12 @@ body .accueil .boutons {
           align-items: center;
 }
 
-body .accueil .boutons .bouton_lecteur {
+body .accueil h1 {
+  color: #fff;
+  font-size: 50px;
+}
+
+body .accueil .bouton_lecteur {
   background-color: black;
   width: 400px;
   height: 80px;
@@ -58,7 +45,7 @@ body .accueil .boutons .bouton_lecteur {
           align-items: center;
 }
 
-body .accueil .boutons .bouton_lecteur a {
+body .accueil .bouton_lecteur a {
   text-decoration: none;
   color: #fff;
   font-size: 30px;
@@ -66,44 +53,67 @@ body .accueil .boutons .bouton_lecteur a {
 }
 
 body .lecteur {
-  min-height: 100%;
-  min-width: 1200px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0px auto;
-  background-color: #888787;
   background-image: url("../images/bg_lecteur.jpg");
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .lecteur h1 {
-  color: #2c53ff;
+  color: #224bfd;
+  font-size: 40px;
+  margin: 0px;
+  margin-bottom: -10px;
+}
+
+body .lecteur .boutonRetour {
+  background-color: #224bfd;
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 100px;
-  font-size: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+body .lecteur .boutonRetour a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
 }
 
 body .lecteur .container {
-  position: relative;
-  margin: -40px auto;
   background: #111;
-  width: 700px;
-  height: 525px;
   border-radius: 25px;
 }
 
 body .lecteur .container .headerBox {
-  background-color: #222;
-  height: 100px;
+  background-image: url("../images/bg_headerBox.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,6 +136,7 @@ body .lecteur .container .headerBox input {
 
 body .lecteur .container .liste {
   height: 200px;
+  cursor: pointer;
   overflow-y: scroll;
 }
 
@@ -155,7 +166,7 @@ body .lecteur .container .liste .musiques .titre, body .lecteur .container .list
 }
 
 body .lecteur .container .footerBox {
-  height: 200px;
+  height: 260px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,8 +177,8 @@ body .lecteur .container .footerBox {
   border-top: 2px solid #f5f5f5;
 }
 
-body .lecteur .container .footerBox .barreSon {
-  height: 200px;
+body .lecteur .container .footerBox .controleChanson {
+  height: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,16 +187,16 @@ body .lecteur .container .footerBox .barreSon {
   border-top: 2px solid #f5f5f5;
 }
 
-body .lecteur .container .footerBox .barreSon .image {
+body .lecteur .container .footerBox .controleChanson .image {
   margin-top: 50px;
 }
 
-body .lecteur .container .footerBox .barreSon .image img {
+body .lecteur .container .footerBox .controleChanson .image img {
   width: 100px;
   height: 100px;
 }
 
-body .lecteur .container .footerBox .barreSon .boitePlay {
+body .lecteur .container .footerBox .controleChanson .boitePlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,7 +212,7 @@ body .lecteur .container .footerBox .barreSon .boitePlay {
           align-items: center;
 }
 
-body .lecteur .container .footerBox .barreSon .boitePlay .tempsDetoulant {
+body .lecteur .container .footerBox .controleChanson .boitePlay .tempsDetoulant {
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -211,11 +222,11 @@ body .lecteur .container .footerBox .barreSon .boitePlay .tempsDetoulant {
           align-items: center;
 }
 
-body .lecteur .container .footerBox .barreSon .boitePlay .tempsDetoulant input {
+body .lecteur .container .footerBox .controleChanson .boitePlay .tempsDetoulant input {
   width: 250px;
 }
 
-body .lecteur .container .footerBox .barreSon .boitePlay .boutonPlay {
+body .lecteur .container .footerBox .controleChanson .boitePlay .boutonPlay {
   padding: 10px;
   background-color: #2075ad;
   border: 1px solid #333;
@@ -225,7 +236,7 @@ body .lecteur .container .footerBox .barreSon .boitePlay .boutonPlay {
   margin-right: 3px;
 }
 
-body .lecteur .container .footerBox .barreSon .volume {
+body .lecteur .container .footerBox .controleChanson .volume {
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -237,6 +248,10 @@ body .lecteur .container .footerBox .barreSon .volume {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+body .lecteur .container .footerBox .controleChanson .volume input {
+  cursor: pointer;
 }
 
 body .lecteur .container .tagsBox {
@@ -253,15 +268,11 @@ body .lecteur .container .tagsBox {
   margin-top: 0px;
   height: 55px;
   padding: 5px 0 0 5px;
-  border-top: 1px solid #222;
+  border-top: 3px solid #222;
   border-radius: 0px 0px 25px 25px;
 }
 
-body .lecteur .container .tagsBox .boucleTag {
-  height: 55px;
-}
-
-body .lecteur .container .tagsBox .boucleTag .tag {
+body .lecteur .container .tagsBox .tag {
   background-color: #111;
   color: #fff;
   border: 1px solid #fff;
